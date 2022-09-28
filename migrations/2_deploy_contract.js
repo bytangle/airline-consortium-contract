@@ -1,5 +1,8 @@
 const Airlines = artifacts.require("Airlines");
 
-module.export = (deployer) => {
-    deployer.deploy(Airlines);
+module.exports = (deployer, accounts) => {
+    console.log(accounts);
+    if(accounts) {
+        deployer.deploy(Airlines, {value : "200000"});
+    }
 }
